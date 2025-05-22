@@ -38,8 +38,7 @@ async def set_amount(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def check_assets(update: Update, context: ContextTypes.DEFAULT_TYPE):
     assets = bot_logic.get_profitable_assets()
-    await update.message.reply_text("Actifs avec ROI > 90%:
-" + "\n".join(assets))
+    await update.message.reply_text("Actifs avec ROI > 90%:" + "\n".join(assets))
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("demo", demo))
