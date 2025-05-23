@@ -1,3 +1,7 @@
+from config import TELEGRAM_TOKEN, WEBHOOK_URL
+
+
+
 import logging
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
