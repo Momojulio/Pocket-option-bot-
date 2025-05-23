@@ -1,7 +1,7 @@
 
 import asyncio
 from telegram.ext import Application, CommandHandler # adapte selon tes fichiers
-from config import BOT_TOKEN, WEBHOOK_URL, PORT
+from config import BOT_TOKEN, WEBHOOK_URL
 
 async def main():
     app = Application.builder().token(TOKEN).build()
