@@ -1,4 +1,4 @@
-import logging
+pimport logging
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 from config import BOT_TOKEN, CHAT_ID, WEBHOOK_URL
@@ -21,7 +21,7 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Fonction principale
 async def main():
-    app = Application.builder().token(TOKEN).build()
+    app = Application.builder().token(BOT_TOKEN).build()
 
     # Ajout des commandes
     app.add_handler(CommandHandler("start", start))
