@@ -4,7 +4,7 @@ from telegram.ext import Application, CommandHandler # adapte selon tes fichiers
 from config import BOT_TOKEN, WEBHOOK_URL
 
 async def main():
-    app = Application.builder().token(TOKEN).build()
+    app = Application.builder().token(BOT_TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", help_command))
@@ -15,8 +15,8 @@ async def main():
     await app.run_webhook(
         listen="0.0.0.0",
         port=PORT,
-        url_path=TOKEN,
-        webhook_url=f"{WEBHOOK_URL}/{TOKEN}",
+        url_path=BOT_TOKEN,
+        webhook_url=f"{WEBHOOK_URL}/{BOT_TOKEN}",
     )
 
 # Lance la coroutine si on est en script principal
