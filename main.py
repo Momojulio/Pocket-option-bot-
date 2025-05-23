@@ -1,7 +1,7 @@
 import logging
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
-from config import TOKEN, WEBHOOK_URL
+from config import BOT_TOKEN, CHAT_ID, WEBHOOK_URL
 
 # Logging pour surveillance
 logging.basicConfig(
