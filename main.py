@@ -1,7 +1,6 @@
 
 import asyncio
-from telegram.ext import Application, CommandHandler
-from bot.handlers import start, help_command, set_amount, set_mode  # adapte selon tes fichiers
+from telegram.ext import Application, CommandHandler # adapte selon tes fichiers
 from config import TOKEN, WEBHOOK_URL, PORT
 
 async def main():
