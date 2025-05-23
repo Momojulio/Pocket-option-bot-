@@ -1,1 +1,25 @@
 
+import asyncio
+from telegram.ext import Application, CommandHandler
+from bot.handlers import start, help_command, set_amount, set_mode  # adapte selon tes fichiers
+from config import TOKEN, WEBHOOK_URL, PORT
+
+async def main():
+    app = Application.builder().token(TOKEN).build()
+
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("help", help_command))
+    app.add_handler(CommandHandler("amount", set_amount))
+    app.add_handler(CommandHandler("mode", set_mode))
+
+    # Démarrer le bot en mode Webhook
+    await app.run_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        url_path=TOKEN,
+        webhook_url=f"{WEBHOOK_URL}/{TOKEN}",
+    )
+
+# Lance la coroutine si on est en script principal
+if __name__ == '__main__':
+    asyncio.get_event_loop().run_until_complete(main())
